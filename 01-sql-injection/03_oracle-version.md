@@ -15,7 +15,7 @@ Khai thác SQLi tại `category` để lấy version Oracle từ `v$version`.
 ```
 
 <img src="images/image-2.png" alt="Union test" width="760" />
-<br><br>
+
 
 <img src="images/image-3.png" alt="Find column count" width="760" />
 <br><br>
