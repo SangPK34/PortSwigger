@@ -1,4 +1,4 @@
-# SQL Injection Lab 09: Truy xuất dữ liệu từ bảng khác bằng UNION
+# SQL Injection Lab 09: Retrieving Data from Other Tables with UNION
 
 ## Mục tiêu
 Dùng `UNION SELECT` để lấy `username`, `password` từ bảng `users`, sau đó đăng nhập tài khoản `administrator`.

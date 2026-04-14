@@ -1,4 +1,4 @@
-# SQL Injection Lab 10: Truy xuất nhiều giá trị trong một cột
+# SQL Injection Lab 10: Retrieving Multiple Values in a Single Column
 
 ## Mục tiêu
 Dùng `UNION SELECT` để lấy thông tin từ bảng `users` khi chỉ có **một cột hiển thị text**, sau đó đăng nhập tài khoản `administrator`.

@@ -1,4 +1,4 @@
-# SQL Injection Lab 11: Blind SQL Injection với phản hồi điều kiện
+# SQL Injection Lab 11: Blind SQL Injection with Conditional Responses
 
 ## Mục tiêu
 Khai thác blind SQLi qua cookie `TrackingId` để tìm mật khẩu của `administrator`, sau đó đăng nhập và hoàn thành lab.
