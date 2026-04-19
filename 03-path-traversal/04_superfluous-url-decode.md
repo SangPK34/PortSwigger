@@ -4,7 +4,7 @@
 Đọc file `/etc/passwd` trong lab Path Traversal khi server chặn traversal sequence rồi mới URL-decode input.
 
 ## Đề bài
-![04_superfluous-url-decode-2026-04-16-00-54-55.png](images/04_superfluous-url-decode-2026-04-16-00-54-55.png)
+<img src="images/04_superfluous-url-decode-2026-04-16-00-54-55.png" width="760" />
 <br><br>
 
 ## Bước 1: Lấy endpoint ảnh
@@ -14,7 +14,7 @@ Mở một ảnh sản phẩm để lấy request:
 GET /image?filename=74.jpg
 ```
 
-![04_superfluous-url-decode-2026-04-16-00-55-43.png](images/04_superfluous-url-decode-2026-04-16-00-55-43.png)
+<img src="images/04_superfluous-url-decode-2026-04-16-00-55-43.png" width="760" />
 <br><br>
 
 ## Bước 2: Bypass bằng double URL-encoding
@@ -30,7 +30,7 @@ Giải thích ngắn:
 
 Vì vậy payload traversal được khôi phục ở bước xử lý cuối.
 
-![04_superfluous-url-decode-2026-04-16-01-09-59.png](images/04_superfluous-url-decode-2026-04-16-01-09-59.png)
+<img src="images/04_superfluous-url-decode-2026-04-16-01-09-59.png" width="760" />
 <br><br>
 
 ## Kết quả
