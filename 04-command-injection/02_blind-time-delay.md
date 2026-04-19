@@ -4,19 +4,19 @@
 Khai thác lỗ hổng Blind OS Command Injection trong chức năng gửi feedback để tạo độ trễ 10 giây.
 
 ## Đề bài
-![02_blind-time-delay-2026-04-20-01-35-55.png](images/02_blind-time-delay-2026-04-20-01-35-55.png)
+<img src="images/02_blind-time-delay-2026-04-20-01-35-55.png" width="760" />
 <br><br>
 
 ## Bước 1: Xác định điểm tấn công
 Từ trang lab, vào chức năng `Submit feedback`.
 
-![02_blind-time-delay-2026-04-20-01-36-53.png](images/02_blind-time-delay-2026-04-20-01-36-53.png)
+<img src="images/02_blind-time-delay-2026-04-20-01-36-53.png" width="760" />
 <br><br>
 
 ## Bước 2: Gửi feedback và kiểm tra từng tham số
 Điền form, submit và chặn request bằng Burp Repeater.
 
-![02_blind-time-delay-2026-04-20-01-39-05.png](images/02_blind-time-delay-2026-04-20-01-39-05.png)
+<img src="images/02_blind-time-delay-2026-04-20-01-39-05.png" width="760" />
 <br><br>
 
 Thử chèn payload vào từng trường. Trường `email` là vị trí khai thác được:
@@ -40,5 +40,5 @@ csrf=<token>&name=sang&email=test||sleep 10||&subject=ahihi&message=ahihi
 ## Kết quả
 Sau khi gửi payload đúng vị trí, lab chuyển sang trạng thái `Solved`.
 
-![02_blind-time-delay-2026-04-20-02-04-10.png](images/02_blind-time-delay-2026-04-20-02-04-10.png)
+<img src="images/02_blind-time-delay-2026-04-20-02-04-10.png" width="760" />
 <br><br>
