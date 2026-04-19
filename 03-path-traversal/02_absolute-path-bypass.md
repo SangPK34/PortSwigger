@@ -4,7 +4,7 @@
 Khai thác lỗi Path Traversal để đọc file `/etc/passwd` khi ứng dụng chặn chuỗi `../` nhưng vẫn cho dùng đường dẫn tuyệt đối.
 
 ## Đề bài
-![02_absolute-path-bypass-2026-04-16-00-34-40.png](images/02_absolute-path-bypass-2026-04-16-00-34-40.png)
+<img src="images/02_absolute-path-bypass-2026-04-16-00-34-40.png" width="760" />
 <br><br>
 
 ## Bước 1: Lấy request ảnh
@@ -14,7 +14,7 @@ Mở ảnh sản phẩm để thấy endpoint:
 GET /image?filename=21.jpg
 ```
 
-![02_absolute-path-bypass-2026-04-16-00-35-41.png](images/02_absolute-path-bypass-2026-04-16-00-35-41.png)
+<img src="images/02_absolute-path-bypass-2026-04-16-00-35-41.png" width="760" />
 <br><br>
 
 ## Bước 2: Bypass bằng absolute path
@@ -26,7 +26,7 @@ GET /image?filename=%2fetc%2fpasswd HTTP/2
 
 Vì server xử lý giá trị này theo filesystem path, nên dù chặn traversal sequence, nó vẫn đọc được `/etc/passwd`.
 
-![02_absolute-path-bypass-2026-04-16-00-38-16.png](images/02_absolute-path-bypass-2026-04-16-00-38-16.png)
+<img src="images/02_absolute-path-bypass-2026-04-16-00-38-16.png" width="760" />
 <br><br>
 
 ## Kết quả
